@@ -1,0 +1,162 @@
+/* ================================================================================
+Tukang Design - Main Stylesheet
+================================================================================ */
+
+/* Tailwind CSS Directives
+-------------------------------------------------- */
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+
+
+/* Brand Color Palette (CSS Variables)
+-------------------------------------------------- 
+This is the single source of truth for all brand colors.
+Tailwind is configured to use these variables.
+*/
+:root {
+  --olive-50: #f3f6f4;
+  --olive-100: #e1eae2;
+  --olive-200: #c5d5c8;
+  --olive-300: #9db8a3;
+  --olive-400: #72957b;
+  --olive-500: #52775d;
+  --olive-600: #3d5e47;
+  --olive-700: #2e4636;
+  --olive-800: #293c30;
+  --olive-900: #223228;
+  --olive-950: #121c15;
+
+  --gold-50: #fbf8eb;
+  --gold-100: #f6efcb;
+  --gold-200: #efdc99;
+  --gold-300: #e6c35e;
+  --gold-400: #ddaa33;
+  --gold-500: #cd9325;
+  --gold-600: #b1721d;
+  --gold-700: #8d531b;
+  --gold-800: #76431d;
+  --gold-900: #65391e;
+  --gold-950: #3a1d0e;
+
+  --neutral-50: #f6f6f6;
+  --neutral-100: #e7e7e7;
+  --neutral-200: #d1d1d1;
+  --neutral-300: #b0b0b0;
+  --neutral-400: #888888;
+  --neutral-500: #6d6d6d;
+  --neutral-600: #5d5d5d;
+  --neutral-700: #4f4f4f;
+  --neutral-800: #454545;
+  --neutral-900: #3d3d3d;
+  --neutral-950: #000000;
+}
+
+
+/* Custom Component Styles
+-------------------------------------------------- */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.recommendation {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.recommendation.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Button Styles
+--------------------------------------------------
+These styles enhance the button appearance with a subtle hover effect.
+*/
+.btn {
+    display: inline-block;
+    padding-left: 1.5rem;  /* px-6 */
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;  /* py-3 */
+    padding-bottom: 0.75rem;
+    background-color: #ddaa33;
+    color: #65391e;
+    font-weight: 600; /* font-semibold */
+    border-radius: 0.5rem; /* rounded-lg */
+    border-bottom: 3px solid #76431d; /* border-b-3 */
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+}
+
+.btn:hover {
+    top: 3px;
+    background-color: #B8860B; /* bg-gold-dark */
+    border-bottom: 0px;
+    border-top: 3px solid #8d531b; /* border-b-3 */
+    color: #fbf8eb;
+    text-shadow: 0 -1px 0 #0000005d;
+    transition-duration: 300ms;
+}
+
+.btn-interactive {
+    display: inline-block;
+    width: 100%;
+    padding-left: 1.5rem;  /* px-6 */
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;  /* py-3 */
+    padding-bottom: 0.75rem;
+    background-color: #f3f6f4; /* bg-gold-100 */
+    color: #3d5e47; /* text-olive-600 */
+    font-weight: 600; /* font-semibold */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1px solid #b0b0b0; /* border-neutral-300 */
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+}
+.btn-interactive:hover {
+    background-color: #52775d; /* bg-olive-500 */
+    color: #e6c35e; /* text-gold-300 */
+    border: 1px solid #52775d; /* border-olive-500 */
+    transition-duration: 300ms;
+}
+.btn-interactive::after {
+    background-color: #ddaa33; /* bg-gold-500 */
+    color: #1d2e24!important; /* text-olive-800 */
+    border-color: #6d6d6d; /* border-neutral-500 */
+    transition-duration: 300ms;
+}
+
+.recommendation {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.7s, opacity 0.5s;
+    margin-top: 0 !important;
+    transition-duration: 300ms;
+}
+
+.recommendation.show {
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem !important; /* or 0 if you want no gap */
+}
+
+#recommendation-area {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0 !important;
+    transition: max-height 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.5s, margin-top 0.3s;
+}
+#recommendation-area.show {
+    max-height: 1000px;
+    opacity: 1;
+}
+

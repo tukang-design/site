@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Kapitani App - Tukang Design</title>
+
+    <!-- 1. Link to Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Links and scripts are the same as index.html for consistency -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Configure Tailwind to use the CSS variables from style.css -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: { 
+                            50: 'var(--olive-50)', 100: 'var(--olive-100)', 200: 'var(--olive-200)', 300: 'var(--olive-300)', 400: 'var(--olive-400)', 500: 'var(--olive-500)', 600: 'var(--olive-600)', 700: 'var(--olive-700)', 800: 'var(--olive-800)', 900: 'var(--olive-900)', 950: 'var(--olive-950)' 
+                        },
+                        gold: { 
+                            50: 'var(--gold-50)', 100: 'var(--gold-100)', 200: 'var(--gold-200)', 300: 'var(--gold-300)', 400: 'var(--gold-400)', 500: 'var(--gold-500)', 600: 'var(--gold-600)', 700: 'var(--gold-700)', 800: 'var(--gold-800)', 900: 'var(--gold-900)', 950: 'var(--gold-950)' 
+                        },
+                        neutral: { 
+                            50: 'var(--neutral-50)', 100: 'var(--neutral-100)', 200: 'var(--neutral-200)', 300: 'var(--neutral-300)', 400: 'var(--neutral-400)', 500: 'var(--neutral-500)', 600: 'var(--neutral-600)', 700: 'var(--neutral-700)', 800: 'var(--neutral-800)', 900: 'var(--neutral-900)', 950: 'var(--neutral-950)' 
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-canvas text-charcoal antialiased">
+
+    <!-- HEADER -->
+    <header class="mix-blend-difference py-4 px-6 md:px-12 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
+        <a href="index.html" class="flex items-center space-x-3 group text-white mix-blend-difference">
+            <!-- NEW SVG LOGO -->
+            <svg width="40" height="40" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="group-hover:opacity-80 transition-opacity">
+                <path d="M16 5.00018L12.8001 8.22192L16 11.4437L19.1999 8.22192L16 5.00018Z" fill="currentColor"/>
+                <path d="M28.8 17.8872L25.5918 21.1173C23.8289 22.8922 20.9708 22.8922 19.2079 21.1173L9.6 11.4436L6.4 14.6654L12.7997 21.109L12.7918 21.117C11.0289 22.8919 8.17078 22.8922 6.40794 21.117L3.2 17.8872L0 21.109L3.2 24.3308C6.73447 27.8894 12.4652 27.8894 15.9997 24.3308C19.5342 27.8894 25.265 27.8894 28.7994 24.3308L31.9997 21.1088L28.7997 17.8869L28.8 17.8872Z" fill="currentColor"/>
+                <path d="M22.4002 11.4438L19.2002 14.6655L22.4002 17.8873L25.6001 14.6655L22.4002 11.4438Z" fill="currentColor"/>
+            </svg>
+            <span class="text-2xl font-bold group-hover:opacity-80 transition-opacity">Tukang Design</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="../services.html" class="text-white font-semibold transition-colors">Services</a>
+            <a href="../portfolio.html" class="text-white mix-blend-difference font-semibold transition-colors">Portfolio</a>
+            <a href="../about.html" class="text-white mix-blend-difference font-semibold transition-colors">About</a>
+            <a href="../contact.html" class="bg-neutral-300 text-black px-5 py-2 rounded-lg font-bold hover:bg-opacity-90 transition-colors">Get Started</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-olive-700 hover:bg-black/5">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+    </header>
+
+    <!-- MOBILE MENU DRAWER (Same as index.html) -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-50 hidden"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-full max-w-xs bg-canvas shadow-lg z-50 transform translate-x-full">
+        <div class="flex justify-between items-center p-6 border-b border-gray-200">
+            <span class="font-bold text-sage">Menu</span>
+            <button id="mobile-menu-close-button" class="p-2 rounded-md text-sage hover:bg-black/5">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+        </div>
+        <nav class="p-6 flex flex-col space-y-6">
+            <a href="services.html" class="mobile-menu-link text-xl font-semibold text-charcoal hover:text-sage transition-colors">Services</a>
+            <a href="portfolio.html" class="mobile-menu-link text-xl font-semibold text-gold">Portfolio</a>
+            <a href="about.html" class="mobile-menu-link text-xl font-semibold text-charcoal hover:text-sage transition-colors">About</a>
+            <a href="contact.html" class="mobile-menu-link mt-4 text-center bg-gold text-white px-5 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors">Get Started</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Case Study Hero -->
+        <section class="bg-white pt-24 pb-12 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="font-semibold text-gold-500">Content Structure & Microsite Design</p>
+                <h1 class="mt-2 text-4xl md:text-5xl font-extrabold text-olive-700 leading-tight tracking-tighter">Building the CFJ Microsite for Musawah</h1>
+            </div>
+            <div class="max-w-6xl mx-auto mt-12 flex justify-center">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*I3EbOIz2p5vDyILo.png" alt="Hero image for Musawah CFJ Microsite project" class="rounded-lg shadow-2xl">
+            </div>
+        </section>
+
+        <!-- Case Study Body -->
+        <article class="py-16 sm:py-20 px-6 bg-gold-50">
+            <div class="max-w-3xl mx-auto space-y-12">
+
+                <!-- Project Overview -->
+                <div class="grid md:grid-cols-3 gap-8 border-b border-neutral-200 pb-8">
+                    <div class="md:col-span-1"><h2 class="text-xl font-bold text-olive-700">Project Overview</h2></div>
+                    <div class="md:col-span-2">
+                        <p class="text-lg text-neutral-900/90">Musawah, a global movement for equality and justice in Muslim family laws, launched the Campaign for Justice (CFJ) to advocate for reforms. I led the UX research, structure, and visual design of the campaign's microsite, covering the full design process from discovery to handover.</p>
+                        <div class="mt-4 text-sm">
+                            <strong class="block">Services:</strong>
+                            <span class="text-neutral-900/80">UX Research, Product Design, Visual Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem & Goals -->
+                <div class="grid md:grid-cols-3 gap-8 border-b border-neutral-200 pb-8">
+                    <div class="md:col-span-1"><h2 class="text-xl font-bold text-olive-700">Problem & Goals</h2></div>
+                    <div class="md:col-span-2 text-lg text-neutral-900/90 space-y-4">
+                        <p>Searching for Muslim family law resources on the existing Musawah website was confusing and slow. Important resources like country law tables were hidden in large PDFs, making them difficult to navigate, especially on mobile.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Goal:</strong> Make country law tables and campaign resources easier to find and filter.</li>
+                            <li><strong>Goal:</strong> Ensure a lightweight, mobile-first experience for audiences in the Global South.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Design Process -->
+                <div class="grid md:grid-cols-3 gap-8 border-b border-neutral-200 pb-8">
+                    <div class="md:col-span-1"><h2 class="text-xl font-bold text-olive-700">Design Process</h2></div>
+                    <div class="md:col-span-2 text-lg text-neutral-900/90 space-y-6">
+                        <div>
+                            <h3 class="font-bold text-neutral-900">Discovery & Research</h3>
+                            <p class="mt-2">We held kickoff meetings to define key problems and goals. An audit of Musawah’s law tables, blog posts, and advocacy materials revealed that the core resources were dense PDFs (30–60 pages each), which were overwhelming on mobile. Research into sites like the World Policy Center provided best practices for organizing heavy resource content.</p>
+                        </div>
+                        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*OsVe-7Cqa83NHNGJdVCDFA.png" alt="Example of dense PDF format" class="rounded-lg shadow-lg">
+                        <div>
+                            <h3 class="font-bold text-neutral-900">Definition & Strategy</h3>
+                            <p class="mt-2">We identified four user groups: Policy Makers, Advocates, Academics, and Activists. Mapping their journeys highlighted critical frustrations around findability and mobile usability. This led to a clear design hypothesis: structured content by country and issue, with summaries and a mobile-first layout, would improve access globally.</p>
+                            <img src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*MUK-IZNUEscFSMtmt9FLWg.png" alt="Define Strategy" class="mt-2 rounded-lg shadow-lg">
+                            <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*3prnUXfkVfux_drvwOqxbg.png" alt="Define Sitemap" class="mt-2 rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Delivery -->
+                <div class="grid md:grid-cols-3 gap-8 border-b border-neutral-200 pb-8">
+                    <div class="md:col-span-1"><h2 class="text-xl font-bold text-olive-700">Delivery</h2></div>
+                    <div class="md:col-span-2 text-lg text-neutral-900/90 space-y-6">
+                        <div>
+                            <h3 class="font-bold text-neutral-900">UX Solutions Delivered</h3>
+                            <p class="mt-2">We focused on clear, user centered solutions. Country law tables were redesigned into clean, print friendly layouts. A sticky side filter was implemented for faster navigation by country or issue on mobile, and a smart tagging system enabled easy exploration across related resources.</p>
+                        </div>
+                        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/0*64gzMJ7vtcUeGCVQ.png" alt="New clean UI design" class="rounded-lg shadow-lg">
+                        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*WP_No7_h7ZYLYX1V_lgtew.png" alt="New clean UI design" class="rounded-lg shadow-lg">
+                        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uS1jnMx-VTvGI6OYNrNGPg.png" alt="New clean UI design" class="rounded-lg shadow-lg">
+                        <div>
+                            <h3 class="font-bold text-neutral-900">UI Guideline</h3>
+                            <p class="mt-2">To support future scalability, I developed a brand style guide covering the core color palette, typography hierarchy, layout grids, and UI component specifications.</p>
+                        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/0*PJD_SqSPv1W4aFUT.jpeg" alt="UI Guideline" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges & Outcomes -->
+                <div class="grid md:grid-cols-3 gap-8 border-b border-neutral-200 pb-8">
+                    <div class="md:col-span-1"><h2 class="text-xl font-bold text-olive-700">Challenges & Outcomes</h2></div>
+                    <div class="md:col-span-2 text-neutral-900/90 space-y-4">
+                        <div class="bg-olive-400 p-4 rounded-lg text-white"><strong>Challenge:</strong> Overwhelming PDFs.<br><strong>Solution:</strong> Organized into browsable country and topic pages.<br><strong>Outcome:</strong> Easier and faster access to resources.</div>
+                        <div class="bg-olive-400 p-4 rounded-lg text-white"><strong>Challenge:</strong> Poor mobile access.<br><strong>Solution:</strong> Lightweight, responsive design for slow networks.<br><strong>Outcome:</strong> Improved reach for Global South users.</div>
+                        <div class="bg-olive-400 p-4 rounded-lg text-white"><strong>Challenge:</strong> Multilingual future needs.<br><strong>Solution:</strong> Structured templates ready for Arabic translation.<br><strong>Outcome:</strong> Future proofed for expansion.</div>
+                    </div>
+                </div>
+
+                <!-- Reflection -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1"><h2 class="text-xl font-bold text-olive-700">Reflection</h2></div>
+                    <div class="md:col-span-2 text-lg text-neutral-900/90 space-y-4">
+                        <p>This project demonstrated how clear structure and advocacy driven UX can turn dense resources into powerful, accessible tools for change. Through a user centered approach, we helped Musawah transform its world leading legal repository into a platform that supports activists, policymakers, and researchers pushing for meaningful family law reform globally.</p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+        
+        <!-- Project Navigation -->
+        <section class="bg-white py-12 px-6">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <a href="lemang.html" class="flex items-center space-x-2 text-neutral-500 hover:text-olive-700">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Previous Project</span>
+                </a>
+                <a href="../portfolio.html" class="font-bold text-olive-700 hover:underline">Back to Portfolio</a>
+                <a href="kapitani.html" class="flex items-center space-x-2 text-neutral-500 hover:text-olive-700">
+                    <span>Next Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="bg-gold-100 py-20 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-olive-700">Ready to Start Your Project?</h2>
+                <p class="mt-4 text-lg text-neutral-900/80">Inspired by this project? Let's talk about how we can bring the same level of craftsmanship and strategic thinking to your business.</p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="../services.html" class="bg-olive-700 text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-opacity">View Our Services</a>
+                    <a href="../contact.html" class="bg-white text-olive-700 px-8 py-3 rounded-lg font-bold hover:bg-neutral-100 transition-colors border border-neutral-200">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <center><img src="../assets/images/logo-white.png" alt="Tukang Design Logo" width="100" height="100" class="group-hover:opacity-80 transition-opacity" /></center>
+            <p class="mt-4 font-bold text-xl">Tukang Design</p>
+            <p class="mt-2 text-gray-400">Your Digital Partner for Malaysian SMEs.</p>
+            <div class="mt-6 flex justify-center space-x-6"><a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a><a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a><a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a></div>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2025 Tukang Design. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT for mobile menu (Same as index.html) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            function openMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenuOverlay.classList.remove('hidden');
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('hidden');
+            }
+
+            mobileMenuButton.addEventListener('click', openMenu);
+            mobileMenuCloseButton.addEventListener('click', closeMenu);
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
+    </script>
+</body>
+</html>
