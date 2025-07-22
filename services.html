@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Tukang Design</title>
+    <title>Web Design and Digital Marketing Services for Malaysian SMEs - Tukang Design</title>
 
     <!-- 1. Link to Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Configure Tailwind to use the CSS variables from style.css -->
     <script>
@@ -67,25 +68,25 @@
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-olive-700 hover:bg-black/5">
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-olive-700 hover:bg-white/5">
             <i class="fas fa-bars fa-lg"></i>
         </button>
     </header>
 
     <!-- MOBILE MENU DRAWER (Same as index.html) -->
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-50 hidden"></div>
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-full max-w-xs bg-canvas shadow-lg z-50 transform translate-x-full">
-        <div class="flex justify-between items-center p-6 border-b border-gray-200">
-            <span class="font-bold text-sage">Menu</span>
-            <button id="mobile-menu-close-button" class="p-2 rounded-md text-sage hover:bg-black/5">
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-full max-w-xs bg-gold-50 shadow-lg z-50 transform translate-x-full">
+        <div class="flex justify-between items-center p-6 border-b border-neutral-200">
+            <span class="font-bold text-olive-700">Menu</span>
+            <button id="mobile-menu-close-button" class="p-2 rounded-md text-olive-700 hover:bg-black/5">
                 <i class="fas fa-times fa-lg"></i>
             </button>
         </div>
         <nav class="p-6 flex flex-col space-y-6">
-            <a href="services.html" class="mobile-menu-link text-xl font-semibold text-charcoal hover:text-sage transition-colors">Services</a>
-            <a href="portfolio.html" class="mobile-menu-link text-xl font-semibold text-gold">Portfolio</a>
-            <a href="about.html" class="mobile-menu-link text-xl font-semibold text-charcoal hover:text-sage transition-colors">About</a>
-            <a href="contact.html" class="mobile-menu-link mt-4 text-center bg-gold text-white px-5 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors">Get Started</a>
+            <a href="services.html" class="mobile-menu-link text-xl font-semibold text-gold-500">Services</a>
+            <a href="portfolio.html" class="mobile-menu-link text-xl font-semibold text-neutral-900 hover:text-olive-700 transition-colors">Portfolio</a>
+            <a href="about.html" class="mobile-menu-link text-xl font-semibold text-neutral-900 hover:text-olive-700 transition-colors">About</a>
+            <a href="contact.html" class="mobile-menu-link mt-4 text-center bg-gold-400 text-white px-5 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors">Get Started</a>
         </nav>
     </div>
 
@@ -100,9 +101,9 @@
         </section>
 
         <!-- Services Packages Cards View -->
-        <section class="py-16 sm:py-20 px-6 bg-gold-50">
+        <section class="py-16 sm:py-20 px-6 bg-olive-100">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12">Compare Our Packages</h2>
+                <h2 class="text-3xl font-bold text-center mb-12 text-olive-800">Compare Our Packages</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
                     <!-- Card 1: Tapak Digital -->
@@ -130,7 +131,7 @@
                     </div>
 
                     <!-- Card 2: Jana Pelanggan -->
-                    <div class="bg-gold-100/50 rounded-2xl shadow-2xl flex flex-col border-2 border-gold-400 relative">
+                    <div class="bg-gold-100 rounded-2xl shadow-2xl flex flex-col border-2 border-gold-400 relative">
                         <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold-400 text-white px-3 py-1 rounded-full text-xs font-bold shadow">Most Popular</span>
                         <div class="p-8 pb-4 text-center">
                             <h3 class="text-2xl font-bold text-neutral-900">Pakej Jana Pelanggan</h3>
@@ -150,7 +151,7 @@
                             <li class="flex items-center gap-3 text-neutral-400"><i class="fas fa-times-circle"></i>Custom Web Application Features</li>
                         </ul>
                         <div class="px-8 pb-8">
-                            <a href="contact.html?package=growth" class="block w-full bg-gold-400 text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-colors text-center">Select Plan</a>
+                            <a href="contact.html?package=growth" class="w-full mt-4 btn text-center">Select Plan</a>
                         </div>
                     </div>
 
@@ -183,7 +184,7 @@
             <div class="mt-8 max-w-7xl mx-auto text-center bg-olive-700 text-white p-10 rounded-lg shadow-xl">
                 <h2 class="text-3xl font-bold">Looking for a Long Term Partner?</h2>
                 <p class="mt-4 text-lg text-olive-100 max-w-2xl mx-auto">For established businesses needing consistent, expert support, our Digital Partner Package provides a dedicated craftsman for your team without the overhead. Let's build a sustained growth strategy together.</p>
-                <a href="contact.html?package=partner" class="mt-8 inline-block bg-gold-400 text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">Inquire About Partnership</a>
+                <button class="btn mt-8 w-96"><a href="contact.html?package=partner" class="">Inquire About Partnership</a></button>
             </div>
         </section>
 
@@ -196,8 +197,8 @@
             <center><img src="assets/images/logo-white.png" alt="Tukang Design Logo" width="100" height="100" class="group-hover:opacity-80 transition-opacity" /></center>
             <p class="mt-4 font-bold text-xl">Tukang Design</p>
             <p class="mt-2 text-gray-400">Your Digital Partner for Malaysian SMEs.</p>
-            <div class="mt-6 flex justify-center space-x-6"><a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a><a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a><a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a></div>
-            <p class="mt-8 text-sm text-gray-500">&copy; 2025 Tukang Design. All Rights Reserved.</p>
+            <div class="mt-6 flex justify-center space-x-6"><a href="https://www.instagram.com/tukangdesign.my/" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a></div>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2025 Tukang Design by TADAL STUDIO. All Rights Reserved.</p>
         </div>
     </footer>
 
